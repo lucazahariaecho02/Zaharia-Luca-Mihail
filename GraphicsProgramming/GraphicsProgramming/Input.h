@@ -31,6 +31,7 @@ public:
 	bool isMouseLDown();
 	void setMouseRDown(bool down);
 	bool isMouseRDown();
+	
 
 private:
 	// Boolean array, element per key

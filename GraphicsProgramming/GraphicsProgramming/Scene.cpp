@@ -39,8 +39,97 @@ void Scene::render() {
 	gluLookAt(0.0f, 0.0f, 6.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
 	
 	// Render geometry/scene here -------------------------------------
-	
 
+	
+	glPolygonMode(GL_FRONT_AND_BACK, input->isKeyDown('r') ? GL_LINE : GL_FILL);
+	
+	if (input->isKeyDown('2'))
+	{
+		glBegin(GL_TRIANGLES);
+		glVertex3f(-1.0f, -1.0f, 0.0f);
+		glVertex3f(1.0f, -1.0f, 0.0f);
+		glVertex3f(0.0f, 1.0f, 0.0f);
+		glEnd();
+	}
+	else if (input->isKeyDown('3'))
+	{
+		glBegin(GL_TRIANGLES);
+		glColor3f(0.0f, 1.0f, 0.0f);
+		glVertex3f(-1.0f, -1.0f, 0.0f);
+		glVertex3f(1.0f, -1.0f, 0.0f);
+		glVertex3f(0.0f, 1.0f, 0.0f);
+		glEnd();
+	}
+	else if (input->isKeyDown('4'))
+	{
+		glBegin(GL_TRIANGLES);
+		glColor3f(1.0f, 0.0f, 0.0f);
+		glVertex3f(-1.0f, -1.0f, 0.0f);
+		glColor3f(0.0f, 1.0f, 0.0f);
+		glVertex3f(1.0f, -1.0f, 0.0f);
+		glColor3f(0.0f, 0.0f, 1.0f);
+		glVertex3f(0.0f, 1.0f, 0.0f);
+		glEnd();
+	}
+	else if (input->isKeyDown('5'))
+	{
+		glBegin(GL_QUADS);
+		glVertex3f(-1.0f, -1.0f, 0.0f);
+		glVertex3f(1.0f, -1.0f, 0.0f);
+		glVertex3f(1.0f, 1.0f, 0.0f);
+		glVertex3f(-1.0f, 1.0f, 0.0f);
+		glEnd();
+	}
+	else if (input->isKeyDown('6'))
+	{
+		if (input->isKeyDown('a'))
+		{
+			glBegin(GL_TRIANGLE_STRIP);
+			glVertex3f(-1.0f, -1.0f, 0.0f);
+			glVertex3f(1.0f, -1.0f, 0.0f);
+			glVertex3f(-1.0f, 1.0f, 0.0f);
+			glVertex3f(1.0f, 1.0f, 0.0f);
+			glVertex3f(1.0f, 2.0f, 0.0f);
+			glEnd();
+		}
+		if (input->isKeyDown('b'))
+		{
+			
+			glBegin(GL_TRIANGLE_FAN);
+			glColor3f(1.0f, 1.0f, 0.0f);
+			glVertex3f(0.0f, 0.0f, 0.0f);
+			glColor3f(0.0f, 1.0f, 1.0f);
+			glVertex3f(1.0f, -0.3f, 0.0f);
+			glColor3f(1.0f, 0.0f, 1.0f);
+			glVertex3f(0.6f, 0.3f, 0.0f);
+			glColor3f(1.0f, 0.5f, 0.0f);
+			glVertex3f(0.0f, 0.9f, 0.0f);
+			glColor3f(0.5f, 0.0f, 0.5f);
+			glVertex3f(-0.4f, 0.6f, 0.0f);
+			glEnd();
+		}
+		if(input->isKeyDown('c'))
+		{
+			glBegin(GL_QUADS);
+			glVertex3f(0.0f, 0.0f, 0.0f);
+			glVertex3f(0.25f, 0.3f, 0.0f);
+			glVertex3f(-0.25f, 0.4f, 0.0f);
+			glVertex3f(-0.5f, 0.0f, 0.0f);
+			glEnd();
+			
+		}
+		if (input->isKeyDown('d'))
+		{
+			glBegin(GL_POLYGON);
+			glVertex3f(0.0f, 0.0f, 0.0f);
+			glVertex3f(0.5f, 0.0f, 0.0f);
+			glVertex3f(0.75f, 0.5f, 0.0f);
+			glVertex3f(0.5f, 1.0f, 0.0f);
+			glVertex3f(0.0f, 1.0f, 0.0f);
+			glVertex3f(-0.25f, 0.5f, 0.0f);
+			glEnd();
+		}
+	}
 
 	// End render geometry --------------------------------------
 
